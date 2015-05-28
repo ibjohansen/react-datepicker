@@ -74,9 +74,9 @@ var Calendar = React.createClass({
     }
 
     return (
-      <div key={key}>
-        {this.days(weekStart)}
-      </div>
+        <div key={key}>
+          {this.days(weekStart)}
+        </div>
     );
   },
 
@@ -86,13 +86,13 @@ var Calendar = React.createClass({
         disabled = day.isBefore(minDate) || day.isAfter(maxDate);
 
     return (
-      <Day
-        key={key}
-        day={day}
-        date={this.state.date}
-        onClick={this.handleDayClick.bind(this, day)}
-        selected={new DateUtil(this.props.selected)}
-        disabled={disabled} />
+        <Day
+            key={key}
+            day={day}
+            date={this.state.date}
+            onClick={this.handleDayClick.bind(this, day)}
+            selected={new DateUtil(this.props.selected)}
+            disabled={disabled} />
     );
   },
 
@@ -108,26 +108,26 @@ var Calendar = React.createClass({
 
   render: function() {
     return (
-      <div className="datepicker">
-        <div className="datepicker__triangle"></div>
-        <div className="datepicker__header">
-          <a className="datepicker__navigation datepicker__navigation--previous"
-              onClick={this.decreaseMonth}>
-          </a>
+        <div className="datepicker">
+          <div className="datepicker__triangle"></div>
+          <div className="datepicker__header">
+            <a className="datepicker__navigation datepicker__navigation--previous ts-icon-arrow-left"
+               onClick={this.decreaseMonth}>
+            </a>
           <span className="datepicker__current-month">
             {this.state.date.localeFormat(this.props.locale, this.props.dateFormat)}
           </span>
-          <a className="datepicker__navigation datepicker__navigation--next"
-              onClick={this.increaseMonth}>
-          </a>
-          <div>
-            {this.header()}
+            <a className="datepicker__navigation datepicker__navigation--next ts-icon-arrow-right"
+               onClick={this.increaseMonth}>
+            </a>
+            <div>
+              {this.header()}
+            </div>
+          </div>
+          <div className="datepicker__month">
+            {this.weeks()}
           </div>
         </div>
-        <div className="datepicker__month">
-          {this.weeks()}
-        </div>
-      </div>
     );
   }
 });

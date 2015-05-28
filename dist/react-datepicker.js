@@ -289,14 +289,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      React.createElement(
 	        "div",
 	        { className: "datepicker__header" },
-	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--previous",
+	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--previous ts-icon-arrow-left",
 	          onClick: this.decreaseMonth }),
 	        React.createElement(
 	          "span",
 	          { className: "datepicker__current-month" },
 	          this.state.date.localeFormat(this.props.locale, this.props.dateFormat)
 	        ),
-	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--next",
+	        React.createElement("a", { className: "datepicker__navigation datepicker__navigation--next ts-icon-arrow-right",
 	          onClick: this.increaseMonth }),
 	        React.createElement(
 	          "div",
